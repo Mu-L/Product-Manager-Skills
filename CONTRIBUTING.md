@@ -20,6 +20,26 @@ Every skill should:
 
 **The most common contribution mistake:** trimming explanation to tighten copy. Brevity that strips learning scaffolding is a defect, not an improvement. If you're shortening a skill, check that you're cutting fluff — not cutting the lesson.
 
+### Commercial Neutrality and Provider Boundaries
+
+This is a shared library of durable product-management practice, not a channel for
+promoting or integrating commercial products.
+
+- Canonical skills must complete their promised job without a named vendor,
+  account, API key, or paid service.
+- Do not add provider-specific setup instructions, API calls, model identifiers,
+  paid-request workflows, tracking links, referral links, or promotional calls to
+  action.
+- A named tool may appear only as a non-preferred example or comparison when it
+  materially helps the reader make a decision. State any cost, data-sharing,
+  account, or vendor-lock-in implications plainly.
+- Provider-specific integrations belong in a separately approved integrations
+  area or companion repository. They require an explicit maintainer request; do
+  not introduce them speculatively through a contribution.
+
+The test is simple: does this teach a reusable practice, or does it steer a reader
+toward a product? If it is the latter, it does not belong in a canonical skill.
+
 ### Why We Don't Use `$ARGUMENTS`
 
 Other skill libraries lean on Claude Code's `$ARGUMENTS` substitution to accept input. We deliberately don't — and it's a differentiator, not an omission:
@@ -189,6 +209,7 @@ For guidance on how to manually distill frameworks and source material into new 
 
 - Review any source material and scripts for unsafe or destructive actions. Skills should not request secrets or run risky commands.
 - If you add a script, place it in `skills/<skill-name>/scripts/`, keep it deterministic, avoid network calls, and document usage in the skill file.
+- Before opening a pull request, confirm that the change does not introduce a commercial dependency, provider-specific integration, affiliate or referral path, tracking link, or paid external request. If a named tool is essential to a comparison, keep the skill usable without it and disclose its implications.
 - Run a quick dry run using the skill questions or template and refine `name`, `description`, and steps until outputs are consistent and specific.
 
 ---
